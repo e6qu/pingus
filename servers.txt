@@ -1,0 +1,3 @@
+google google.com
+yahoo yahoo.com
+baidu baidu.com
