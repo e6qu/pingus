@@ -81,7 +81,7 @@ public class PingFrame {
 
                         if (ping <= -1) {
                             pingString = "<font color=\"red\">" + "<strong>timeout</strong>" + "</font>";
-                        } else if (ping > -1 && ping < 50) {
+                        } else if (ping > -1 && ping <= 50) {
                             pingString = "<font color=\"green\">" + pingString + "</font>";
                         } else if (ping > 50) {
                             pingString = "<font color=\"maroon\">" + pingString + "</font>";
