@@ -16,7 +16,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
-public class PingFrame {
+public class Main {
 
     private static final LinkedList<Pair> serverList = new LinkedList<>();
 
@@ -91,7 +91,7 @@ public class PingFrame {
                         try {
                             Thread.sleep(1000);
                         } catch (InterruptedException ex) {
-                            Logger.getLogger(PingFrame.class.getName()).log(Level.SEVERE, null, ex);
+                            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
                         }
                     }
                 }
