@@ -39,7 +39,6 @@ public class Ping {
 
             String out;
             int lines = 0;
-
             while ((out = inStreamReader.readLine()) != null) {
                 ++lines;
                 if (lines >= 10) {
@@ -57,10 +56,10 @@ public class Ping {
         return -1;
     }
 
-    public static List<Pair> getPairs() {
+    public static List<Pair> getPairs(String serversfile) {
         List<Pair> pairs = new LinkedList<>();
         try {
-            List<String> lines = Files.readAllLines(Paths.get("servers.txt"), Charset.defaultCharset());
+            List<String> lines = Files.readAllLines(Paths.get(serversfile), Charset.defaultCharset());
 
             for (String line : lines) {
                 String[] parts = line.trim().split("\\s+");
@@ -75,7 +74,7 @@ public class Ping {
                 }
             }
         } catch (IOException ex) {
-            System.out.println("There is a problem with the servers.txt file. Does it exist?");
+            System.out.println("There is a problem with the serversfile. Does it exist at the location: " + serversfile + " ?");
         }
         return pairs;
     }

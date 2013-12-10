@@ -1,3 +1,26 @@
+#############################################################
+#   Lista serverelor de pinguit                             #
+#                                                           #
+#   format: nume [spatii] adresa                            #
+#                                                           #
+#   liniile marcate cu diez # nu sunt luate in considerare  #
+#############################################################
+
+AP1 192.168.99.8
+AP2 192.168.99.9
+NAS 192.168.99.10
+cam01 192.168.99.11
+cam02 192.168.99.12
+cam03 192.168.99.13
+cam04 192.168.99.14
+cam05 192.168.99.15
+cam06 192.168.99.16
+cam07 192.168.99.17
+cam08 192.168.99.18
+cam09 192.168.99.19
+cam10 192.168.99.20
+cam11 192.168.99.21
+cam12 192.168.99.22
 google google.com
-yahoo yahoo.com
 baidu baidu.com
+yahoo yahoo.com

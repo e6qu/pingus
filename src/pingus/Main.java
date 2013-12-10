@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
@@ -20,15 +19,14 @@ public class Main {
 
     private static final LinkedList<Pair> serverList = new LinkedList<>();
 
-    private static void createWindow() {
+    private static void createWindow(String serversfile) {
         final JFrame frame = new JFrame("Pingus");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setPreferredSize(new Dimension(400, 200));
+        frame.setPreferredSize(new Dimension(626, 283));
 
         frame.getContentPane().setLayout(new FlowLayout(FlowLayout.LEADING));
 
-        List<Pair> servers = Ping.getPairs();
-        List<JLabel> labels = new LinkedList<>();
+        List<Pair> servers = Ping.getPairs(serversfile);
 
         for (final Pair p : servers) {
             final JTextPane keyLabel = new JTextPane();
@@ -103,6 +101,15 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        createWindow();
+        if (args.length < 1) {
+            System.out.println("Pingus. Pings a list of servers once a second.");
+            System.out.println("    Usage: java -jar Pingus.jar path_to_serversfile");
+            System.out.println("    the serversfile is a file of the form: ");
+            System.out.println("        name1 address1");
+            System.out.println("        name2 address2");
+            System.out.println("        ...");
+            System.exit(1);
+        }
+        createWindow(args[0]);
     }
 }
